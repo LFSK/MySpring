@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- DefaultController -->
+	<bean name="defaultController" class="com.megait.jgjczb.controller.DefaultController">
+		<property name="methodNameResolver" ref="defaultControllerResolver"/>
+		<property name="defaultManager" ref="defaultManager"></property>
+	</bean>
+	<bean name="defaultControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/Default.do">Default</prop>
+				<prop key="/Login.do">Login</prop>
+				<prop key="/Logout.do">Logout</prop>
+				<prop key="/downloadSetup.do">downloadSetup</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- YlfwController -->
+	<bean name="ylfwController" class="com.megait.jgjczb.controller.YlfwController">
+		<property name="methodNameResolver" ref="ylfwControllerResolver"/>
+		<property name="ylfwManager" ref="ylfwManager"></property>
+	</bean>
+	<bean name="ylfwControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/ylfw/searchMServices.do">searchMServices</prop>
+				<prop key="/ylfw/uploadInfo.do">uploadInfo</prop>
+				<prop key="/ylfw/MServiceTypeTree.do">MServiceTypeTree</prop>
+				<prop key="/ylfw/MServiceTypeTree1.do">MServiceTypeTree1</prop>
+				<prop key="/ylfw/saveOrUpdateInfo.do">saveOrUpdateInfo</prop>
+				<prop key="/ylfw/openUpdateView.do">openUpdateView</prop>
+				<prop key="/ylfw/deleteInfo.do">deleteInfo</prop>
+				<prop key="/ylfw/outPutExcel.do">outPutExcel</prop>
+				<prop key="/ylfw/getDate.do">getDate</prop>
+				<prop key="/ylfw/MServiceTopTypeTree.do">MServiceTopTypeTree</prop>
+			</props>
+		</property>
+	</bean>
+<!--   NotificationController-->
+	<bean name="notificationController" class="com.megait.jgjczb.controller.NotificationController">
+		<property name="methodNameResolver" ref="notificationControllerResolver"/>
+		<property name="notificationManager" ref="notificationManager"></property>
+	</bean>
+	<bean name="notificationControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/notification/listofn.do">listofn</prop>
+				<prop key="/notification/chooseH.do">chooseH</prop>
+				<prop key="/notification/navsendN.do">navsendN</prop>
+				<prop key="/notification/sendN.do">sendN</prop>
+				<prop key="/notification/updateN.do">updateN</prop>
+				<prop key="/notification/delN.do">delN</prop>
+				<prop key="/notification/listofmessage.do">listofmessage</prop>
+				<prop key="/notification/saveMessage.do">saveMessage</prop>
+			</props>
+		</property>
+	</bean>
+<!--   RuleController-->
+	<bean name="ruleController" class="com.megait.jgjczb.controller.RuleController">
+		<property name="methodNameResolver" ref="ruleControllerResolver"/>
+		<property name="ruleManager" ref="ruleManager"></property>
+	</bean>
+	<bean name="ruleControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/rule/navinitialRule.do">navinitialRule</prop>
+				<prop key="/rule/initialRule.do">initialRule</prop>
+				<prop key="/rule/navupdateRules.do">navupdateRules</prop>
+				<prop key="/rule/updateRules.do">updateRules</prop>
+				<prop key="/rule/listOfRule.do">listOfRule</prop>
+				<prop key="/rule/navaddRuleSet.do">navaddRuleSet</prop>
+				<prop key="/rule/addRuleSet.do">addRuleSet</prop>
+				<prop key="/rule/deleteRuleSet.do">deleteRuleSet</prop>
+			</props>
+		</property>
+	</bean>
+
+<!-- HInfoController -->
+	<bean name="HInfoController" class="com.megait.jgjczb.controller.HInfoController">
+		<property name="methodNameResolver" ref="HInfoControllerResolver"/>
+		<property name="hInfoManager" ref="hInfoManager"></property>
+		<property name="userAccountManager" ref="userAccountManager"></property>
+	</bean>
+	<bean name="HInfoControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/hInfo/hInfoCreate.do">HInfoCreate</prop>
+				<prop key="/hInfo/beforeUpdateHInfo.do">HInfoSearchOne</prop>
+				<prop key="/hInfo/hInfoSearch.do">HInfoSearch</prop>
+				<prop key="/hInfo/returnSearchAll.do">returnSearchAll</prop>
+				<prop key="/hInfo/deleteHInfo.do">HInfoDelete</prop>
+				<prop key="/hInfo/findUA.do">findUA</prop>
+				<prop key="/hInfo/beforeCreateHInfo.do">beforeCreateHInfo</prop>
+			</props>
+		</property>
+	</bean>
+<!-- FeesInfoController -->
+	<bean name="feesInfoController" class="com.megait.jgjczb.controller.FeesInfoController">
+		<property name="methodNameResolver" ref="feesInfoControllerResolver"/>
+		<property name="feesManager" ref="feesManager"></property>
+		<property name="ruleManager" ref="ruleManager"></property>
+		<property name="hInfoManager" ref="hInfoManager"></property>
+		<property name="monthManager" ref="monthManager"></property>
+		<property name="ckStorageManager" ref="ckStorageManager"></property>
+	</bean>
+	<bean name="feesInfoControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/cx/navckset.do">navckset</prop>
+				<prop key="/cx/beginck.do">beginck</prop>
+				<prop key="/cx/listofh.do">listofh</prop>
+				<prop key="/cx/searchFees.do">searchFees</prop>
+				<prop key="/cx/searchCk.do">searchCk</prop>
+				<prop key="/cx/navoutPutExcel.do">navoutPutExcel</prop>
+				<prop key="/cx/outPutExcel.do">outPutExcel</prop>
+				<prop key="/cx/downLoadExcel.do">downLoadExcel</prop>
+			</props>
+		</property>
+	</bean>	
+	<!-- AdminController -->
+	<bean name="adminController" class="com.megait.jgjczb.controller.AdminController">
+		<property name="methodNameResolver" ref="adminControllerResolver"/>
+		<property name="hTableManager" ref="hTableManager"></property>
+	</bean>
+	<bean name="adminControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/admin/listoftable.do">listoftable</prop>
+				<prop key="/admin/ifExistsIndex.do">ifExistsIndex</prop>
+				<prop key="/admin/createIdxLik.do">createIdxLik</prop>
+			</props>
+		</property>
+	</bean>	
+	<!-- ClientController -->
+	<bean name="ClientController" class="com.megait.jgjczb.controller.ClientController">
+		<property name="methodNameResolver" ref="ClientControllerResolver"/>
+		<property name="userAccountManager" ref="userAccountManager"></property>
+		<property name="hInfoManager" ref="hInfoManager"></property>
+		<property name="notificationManager" ref="notificationManager"></property>
+		<property name="fileStorageManager" ref="fileStorageManager"></property>
+	</bean>
+	<bean name="ClientControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/client/test.do">test</prop>
+				<prop key="/client/loginCk.do">loginCk</prop>
+				<prop key="/client/getH.do">getH</prop>
+				<prop key="/client/register.do">register</prop>
+				<prop key="/client/updatePw.do">updatePw</prop>
+				<prop key="/client/getNotification.do">getNotification</prop>
+				<prop key="/client/countFile.do">countFile</prop>
+				<prop key="/client/countFileNum.do">countFileNum</prop>
+				<prop key="/client/savePkInfo.do">savePkInfo</prop>
+				<prop key="/client/saveFileInfo.do">saveFileInfo</prop>
+				<prop key="/client/canceleUpload.do">canceleUpload</prop>
+				<prop key="/client/uploadFile.do">uploadFile</prop>
+				<prop key="/client/listofn.do">listofn</prop>
+				<prop key="/client/listofmessage.do">listofmessage</prop>
+				<prop key="/client/saveMessage.do">saveMessage</prop>
+				<prop key="/client/listofuploadrec.do">listofuploadrec</prop>
+			</props>
+		</property>
+	</bean>	
+</beans>

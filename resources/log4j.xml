@@ -1,0 +1,95 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="info"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p - %C.%M(%L) %d{HH:MM:ss} | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="logFile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/logs/jgjczb.log"></param>
+		<param name="Threshold" value="INFO"></param>
+		<param name="Append" value="true"></param>
+		<param name="Encoding" value="UTF-8"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %p - %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="jbpmlogFile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/logs/jbpmplus.log"></param>
+		<param name="Threshold" value="INFO"></param>
+		<param name="Append" value="true"></param>
+		<param name="Encoding" value="UTF-8"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %p - %C.%M(%L) | %m%n" />
+			<param name="ConversionPattern" value="%d{yyyy/MM/dd-HH:mm:ss,SSS} %t-%C{2}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+
+	<appender name="hibernateLogFile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/logs/jgjczb-hibernate.log"></param>
+		<param name="Threshold" value="INFO"></param>
+		<param name="Append" value="true"></param>
+		<param name="Encoding" value="UTF-8"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyy/MMM/dd-HH:mm:ss,SSS} %p - %C{3}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="springLogFile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/logs/jgjczb-spring.log"></param>
+		<param name="Threshold" value="INFO"></param>
+		<param name="Append" value="true"></param>
+		<param name="Encoding" value="UTF-8"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyy/MMM/dd-HH:mm:ss,SSS} %p - %C{3}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="error" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/logs/jgjczb-error.log"></param>
+		<param name="Threshold" value="error"></param>
+		<param name="Encoding" value="UTF-8"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyy/MMM/dd-HH:mm:ss,SSS} %t-%C{2}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="timeCost" class="org.apache.log4j.FileAppender">
+		<param name="File" value="logs/jgjczb-timecost.log"></param>
+		<param name="Threshold" value="debug"></param>
+		<param name="Append" value="true"></param>
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyy/MMM/dd-HH:mm:ss,SSS} %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 系统自己的 -->
+	<logger name="com.megait.jgjczb.web.VisitFilter">
+		<level value="info" />
+		<appender-ref ref="logFile" />
+	</logger>
+	<logger name="com.megait.jgjczb.controller.CkPreController">
+		<level value="info" />
+		<appender-ref ref="logFile" />
+	</logger>
+	<logger name="com.megait.jgjczb.daoo.CkProDao">
+		<level value="info" />
+		<appender-ref ref="logFile" />
+	</logger>
+	<logger name="com.megait.jgjczb.daoo.CkDB">
+		<level value="info" />
+		<appender-ref ref="logFile" />
+	</logger>
+
+	<root>
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="error" />
+	</root>
+</log4j:configuration>

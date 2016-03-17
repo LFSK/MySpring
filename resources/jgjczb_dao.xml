@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--  MServiceTypeDao-->
+	<bean id="mServiceTypeDao" class="com.megait.jgjczb.dao.MServiceTypeDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  MServicesDao-->
+	<bean id="mServicesDao" class="com.megait.jgjczb.dao.MServicesDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  UserAccountDao-->
+	<bean id="userAccountDao" class="com.megait.jgjczb.dao.UserAccountDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  QyAccountDao-->
+	<bean id="qyAccountDao" class="com.megait.jgjczb.dao.QyAccountDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+	<!--  RuleDao-->
+	<bean id="ruleDao" class="com.megait.jgjczb.dao.RuleDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+	<!--  NotificationDao-->
+	<bean id="notificationDao" class="com.megait.jgjczb.dao.NotificationDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  CkListDao-->
+	<bean id="ckListDao" class="com.megait.jgjczb.dao.CkListDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  CkFeesDao-->
+	<bean id="ckFeesDao" class="com.megait.jgjczb.dao.CkFeesDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  HInfoDao-->
+	<bean id="hInfoDao" class="com.megait.jgjczb.dao.HInfoDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  HTableDao-->
+	<bean id="hTableDao" class="com.megait.jgjczb.dao.HTableDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  FeesMonthDao-->
+	<bean id="feesMonthDao" class="com.megait.jgjczb.dao.FeesMonthDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  CkMonthDao-->
+	<bean id="ckMonthDao" class="com.megait.jgjczb.dao.CkMonthDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  FeesDao-->
+	<bean id="feesDao" class="com.megait.jgjczb.dao.FeesDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<!--  FileInfoDao-->
+	<bean id="fileInfoDao" class="com.megait.jgjczb.dao.FileInfoDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<!--  PkInfoDao-->
+	<bean id="pkInfoDao" class="com.megait.jgjczb.dao.PkInfoDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<!--  LsbInfoDao-->
+	<bean id="lsbInfoDao" class="com.megait.jgjczb.dao.LsbInfoDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+</beans>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- DefaultManager -->
+	<bean id="defaultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.DefaultManager">
+				<property name="qyAccountDao" ref="qyAccountDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- YlfwManager -->
+	<bean id="ylfwManager" parent="baseTransactionProxy">
+		<property name="target" ref="ylfwManagerTarget"/>
+	</bean>
+	<bean id="ylfwManagerTarget" class="com.megait.jgjczb.service.YlfwManager">
+		<property name="mServicesDao" ref="mServicesDao"/>
+		<property name="mServiceTypeDao" ref="mServiceTypeDao"></property>
+	</bean>
+	<!-- HInfoManager -->
+	<bean id="hInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.HInfoManager">
+				<property name="hInfoDao" ref="hInfoDao"/>
+				<property name="userAccountDao" ref="userAccountDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- HTableManager -->
+	<bean id="hTableManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.HTableManager">
+				<property name="hTableDao" ref="hTableDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- MonthManager -->
+	<bean id="monthManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.MonthManager">
+				<property name="feesMonthDao" ref="feesMonthDao"/>
+				<property name="ckMonthDao" ref="ckMonthDao"/>
+				<property name="hTableDao" ref="hTableDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- RuleManager -->
+	<bean id="ruleManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.RuleManager">
+				<property name="ruleDao" ref="ruleDao"/>
+			</bean>
+		</property>	
+	</bean>
+	<!-- NotificationManager -->
+	<bean id="notificationManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.NotificationManager">
+				<property name="notificationDao" ref="notificationDao"/>
+				<property name="hInfoDao" ref="hInfoDao"/>
+			</bean>
+		</property>	
+	</bean>
+	
+	<!-- CkStorageManager -->
+	<bean id="ckStorageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.CkStorageManager">
+				<property name="hTableDao" ref="hTableDao"/>
+				<property name="ruleDao" ref="ruleDao"/>
+				<property name="ckListDao" ref="ckListDao"/>
+				<property name="ckMonthDao" ref="ckMonthDao"/>
+			</bean>
+		</property>	
+	</bean>
+	<!-- FileStorageManager -->
+	<bean id="fileStorageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.FileStorageManager">
+				<property name="hTableDao" ref="hTableDao"/>
+				<property name="pkInfoDao" ref="pkInfoDao"/>
+				<property name="feesMonthDao" ref="feesMonthDao"/>
+				<property name="fileInfoDao" ref="fileInfoDao"/>
+				<property name="lsbInfoDao" ref="lsbInfoDao"/>
+			</bean>
+		</property>	
+	</bean>
+
+	<!-- UserAccountManager -->
+	<bean id="userAccountManager" parent="baseTransactionProxy" >
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.UserAccountManager">
+				<property name="userAccountDao" ref="userAccountDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- FeesManager -->
+	<bean id="feesManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.megait.jgjczb.service.FeesManager">
+				<property name="feesDao" ref="feesDao"/>
+				<property name="hTableDao" ref="hTableDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>
